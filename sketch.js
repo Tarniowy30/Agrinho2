@@ -1,6 +1,4 @@
-
 let cenario = "menu";
-let imgCampo, imgCidade;
 let somCampo, somCidade;
 
 function preload() {
@@ -14,24 +12,20 @@ function setup() {
 
 function draw() {
   background(200);
+  textAlign(CENTER, CENTER);
+  fill(0);
+  textSize(24);
+
   if (cenario == "menu") {
-    fill(0);
-    textSize(32);
-    textAlign(CENTER, CENTER);
-    text("Escolha o cenário:
-Clique para Campo ou Cidade", width/2, height/2);
+    text("Escolha o cenário:\nClique para Campo ou Cidade", width/2, height/2);
   } else if (cenario == "campo") {
     background(100, 200, 100);
     fill(255);
-    textSize(24);
-    text("Você está no Campo!
-Pressione ESPAÇO para ir à Cidade", width/2, height/2);
+    text("Você está no Campo!\nPressione ESPAÇO para ir à Cidade", width/2, height/2);
   } else if (cenario == "cidade") {
     background(100, 100, 200);
     fill(255);
-    textSize(24);
-    text("Você está na Cidade!
-Pressione ESPAÇO para voltar ao Campo", width/2, height/2);
+    text("Você está na Cidade!\nPressione ESPAÇO para voltar ao Campo", width/2, height/2);
   }
 }
 
