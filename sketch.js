@@ -1,56 +1,64 @@
-let cenario = "menu";
-let somCampo, somCidade;
+// Projeto Agrinho - Festejando a Conexão Campo-Cidade
+// Desenvolvido por [Seu Nome] - #agrinho
 
-function preload() {
-  somCampo = loadSound('sons/campo.mp3');
-  somCidade = loadSound('sons/cidade.mp3');
-}
+let fundo;
+let tamanhoNuvem = 50;
+let solX = 100;
+let corDoCampo;
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(700, 400);
+  fundo = color(135, 206, 235);  // Azul céu
+  corDoCampo = color(34, 139, 34); // Verde campo
 }
 
 function draw() {
-  background(200);
-  textAlign(CENTER, CENTER);
-  fill(0);
-  textSize(24);
+  background(fundo);
 
-  if (cenario == "menu") {
-    text("Escolha o cenário:\nClique para Campo ou Cidade", width / 2, height / 2);
-  } else if (cenario == "campo") {
-    background(100, 200, 100);
-    fill(255);
-    text("Você está no Campo!\nPressione ESPAÇO para ir à Cidade", width / 2, height / 2);
-  } else if (cenario == "cidade") {
-    background(100, 100, 200);
-    fill(255);
-    text("Você está na Cidade!\nPressione ESPAÇO para voltar ao Campo", width / 2, height / 2);
+  desenharCampo();
+  desenharCidade();
+  desenharSol();
+  desenharNuvem(mouseX, mouseY, tamanhoNuvem);
+}
+
+function desenharCampo() {
+  fill(corDoCampo);
+  rect(0, height / 2, width, height / 2);
+}
+
+function desenharCidade() {
+  fill(100);
+  for (let i = 0; i < 5; i++) {
+    let predioAltura = random(40, 100);
+    rect(350 + i * 60, height / 2 - predioAltura, 40, predioAltura);
   }
+}
+
+function desenharSol() {
+  fill(255, 204, 0);
+  ellipse(solX, 80, 60, 60);
+  solX += 0.5;
+  if (solX > width + 30) {
+    solX = -30;
+  }
+}
+
+function desenharNuvem(x, y, tamanho) {
+  fill(255);
+  ellipse(x, y, tamanho, tamanho / 2);
+  ellipse(x + 20, y - 10, tamanho, tamanho / 2);
+  ellipse(x - 20, y - 10, tamanho, tamanho / 2);
 }
 
 function mousePressed() {
-  if (cenario == "menu") {
-    if (mouseX < width / 2) {
-      cenario = "campo";
-      somCampo.play();
-    } else {
-      cenario = "cidade";
-      somCidade.play();
-    }
+  fundo = color(random(100, 255), random(100, 255), random(100, 255));
+}
+
+function keyReleased() {
+  tamanhoNuvem += 10;
+  if (tamanhoNuvem > 100) {
+    tamanhoNuvem = 50;
   }
 }
 
-function keyPressed() {
-  if (key == ' ') {
-    if (cenario == "campo") {
-      cenario = "cidade";
-      somCampo.stop();
-      somCidade.play();
-    } else if (cenario == "cidade") {
-      cenario = "campo";
-      somCidade.stop();
-      somCampo.play();
-    }
-  }
-}
+      
