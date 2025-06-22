@@ -17,8 +17,7 @@ function draw() {
   textSize(24);
 
   if (cenario == "menu") {
-   text("Escolha o cenário:
-Clique para Campo ou Cidade", width/2, height/2);
+    text("Escolha o cenário:\nClique para Campo ou Cidade", width / 2, height / 2);
   } else if (cenario == "campo") {
     background(100, 200, 100);
     fill(255);
@@ -55,4 +54,3 @@ function keyPressed() {
     }
   }
 }
-  
