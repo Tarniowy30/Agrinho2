@@ -1,23 +1,24 @@
+# Projeto Agrinho - Festejando a Conexão Campo-Cidade - #agrinho
 
-# Projeto Agrinho - Conexão Campo-Cidade
+## Tema
+**Festejando a Conexão Campo-Cidade**
 
-Este projeto foi desenvolvido em JavaScript utilizando a biblioteca p5.js.
+## Sobre o Projeto
+Este projeto foi desenvolvido usando **JavaScript** com a biblioteca **p5.js**. Ele representa o campo (gramado) e a cidade (prédios) interagindo com elementos naturais como o sol e as nuvens.
 
-## Como funciona:
+## Funcionalidades
+- **Sol animado**: move-se da esquerda para a direita.
+- **Campo**: área verde representando a natureza.
+- **Cidade**: prédios com altura aleatória, representando o crescimento urbano.
+- **Nuvem interativa**:
+  - segue o mouse,
+  - aumenta de tamanho ao pressionar teclas.
+- **Mudança de clima**: ao clicar com o mouse, o fundo muda de cor.
 
-- Ao abrir o projeto, o usuário verá um menu com a escolha de cenário: Campo ou Cidade.
-- Clique na lateral esquerda para Campo ou na direita para Cidade.
-- Sons ambiente serão reproduzidos de acordo com o cenário escolhido.
-- Durante a execução, pressione ESPAÇO para alternar entre os cenários.
+## Como rodar
+1. Clone ou baixe este repositório.
+2. Abra o arquivo `index.html` em qualquer navegador moderno.
 
-## Requisitos do Concurso:
-
-- Linguagem: JavaScript com p5.js.
-- Estrutura: index.html, sketch.js, style.css, e sons.
-- Interatividade: Uso de mouse e teclado.
-- Publicado no GitHub com a hashtag #agrinho.
-
-## Autor:
-
-Projeto 100% original e criado especificamente para o Concurso Agrinho 2025.
+## Licenciamento
+Projeto 100% autoral criado por [Seu Nome].
 
